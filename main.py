@@ -1,4 +1,4 @@
-# Stage 1: F1 Lap Time Tracker
+# Stage 2: F1 Lap Time Tracker (AI-Assisted)
 
 def calculate_average(lap_times: list) -> float:
     # Prevent a division by zero error if the user exits without entering any laps
@@ -18,10 +18,21 @@ def main():
         if user_input.lower() == 'done':
             break
         
-        # Convert the text input into a decimal number for calculations
-        lap_time = float(user_input)
-        laps.append(lap_time)
-        print(f"Recorded: {lap_time}s")
+        # AI IMPROVEMENT: Use a try-except block to validate input and prevent program crashes
+        try:
+            lap_time = float(user_input)
+            
+            # Reject negative numbers or zero since lap times must be positive
+            if lap_time <= 0:
+                print("Error: Lap time must be greater than zero.")
+                continue
+                
+            laps.append(lap_time)
+            print(f"Recorded: {lap_time}s")
+            
+        except ValueError:
+            # Catch the error if the user types text instead of a number
+            print("Invalid input. Please enter a numerical value (e.g., 85.4).")
     
     # Display the final analytics only if data was actually collected
     if len(laps) > 0:
