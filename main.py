@@ -37,6 +37,7 @@ def main():
     # Display the final analytics only if data was actually collected
     if len(laps) > 0:
         print("\n--- Session Summary ---")
+        print(f"Total Session Time: {sum(laps):.2f}s") 
         print(f"Total Laps: {len(laps)}")
         print(f"Fastest Lap: {min(laps):.2f}s")
         print(f"Average Lap: {calculate_average(laps):.2f}s")
