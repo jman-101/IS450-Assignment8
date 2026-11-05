@@ -27,3 +27,10 @@ I accepted the AI's recommendation to use a `try-except` block because it is the
 2. Run the script using Python:
    ```bash
    python main.py
+
+## Feature Development Comparison
+For this dual-approach assignment, I created two distinct features for the F1 Lap Tracker. On the `manual-feature` branch, I added a "Total Session Time" calculation that sums all recorded laps and displays the total duration in seconds. I wrote this using Python's built-in `sum()` function. On the `ai-feature` branch, I used Google Gemini to implement a "Slowest Lap" tracker. I asked the AI to write a function that finds the highest value in the lap list.
+
+The AI-produced feature worked correctly on the first attempt, utilizing the `max()` function. I did not have to modify or reject any of the AI's logic, though I did manually format the f-string to ensure it matched the visual style of the existing console output.
+
+Ultimately, the manual approach gave me greater confidence. While the AI was instantly accurate for this simple list operation, writing the manual feature forced me to actively think about the data structure and how the new print statement integrated into the existing control flow. The AI approach felt like pasting a black box, whereas the manual approach reinforced my understanding of the program's architecture.
